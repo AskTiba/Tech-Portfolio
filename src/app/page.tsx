@@ -14,7 +14,7 @@ export default function Home() {
       <button
         type="button"
         onClick={handleClick}
-        className="bg-orange my-6 py-3 px-5 rounded-3xl text-xl"
+        className="bg-orange text-blue font-bold my-6 py-3 px-5 rounded-3xl text-xl transition-all duration-200 hover:bg-white"
       >
         Interactive Rating Component
       </button>
