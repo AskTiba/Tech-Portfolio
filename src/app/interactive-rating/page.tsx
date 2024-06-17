@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import star from "@public/images/icon-star.svg";
-import Rating from "../../components/Rating";
+import Rating from "@components/Rating";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
