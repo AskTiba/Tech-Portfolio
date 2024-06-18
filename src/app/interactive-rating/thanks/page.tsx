@@ -11,7 +11,7 @@ function Page() {
 
   return (
     <main className="flex justify-center items-center bg-dark-blue h-screen w-screen text-white">
-      <article className="bg-blue flex flex-col items-center py-10 px-8 rounded-3xl">
+      <article className="bg-blue flex flex-col items-center py-6 px-3 rounded-3xl">
         <div>
           <Image
             src={thanks}
