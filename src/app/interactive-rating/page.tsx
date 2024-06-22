@@ -13,21 +13,16 @@ import React from "react";
 function Page() {
   const rate = [...Array(5)].map((val, index) => index + 1);
 
-  const rating = useAppSelector((state) => state.rating.value);
   const dispatch = useAppDispatch();
 
   const router = useRouter();
 
-  const handleRatingClick = (ratingValue:number) => {
+  const handleRatingClick = (ratingValue: number) => {
     dispatch(setRating(ratingValue));
   };
 
   const handleSubmit = () => {
-    if (rating !== null) {
-      router.push(`/interactive-rating/thanks?rating=${rating}`, {
-        scroll: false,
-      });
-    }
+    router.push("/interactive-rating/thanks");
   };
   return (
     <main className="flex text-[15px] text-white bg-dark-blue h-screen w-screen justify-center items-center">
