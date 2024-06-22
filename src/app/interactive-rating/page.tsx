@@ -5,22 +5,24 @@ import star from "@public/images/icon-star.svg";
 import Rating from "@components/Rating";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { useAppDispatch, useAppSelector } from "../hooks";
+import { setRating } from "../../features/rating/ratingSlice";
 
 import React from "react";
 
 function Page() {
   const rate = [...Array(5)].map((val, index) => index + 1);
-  const [selectedRating, setSelectedRating] = useState(0);
+
+  const dispatch = useAppDispatch();
+
   const router = useRouter();
 
-  const handleRatingClick = (rating: number) => {
-    setSelectedRating(rating);
+  const handleRatingClick = (ratingValue: number) => {
+    dispatch(setRating(ratingValue));
   };
 
   const handleSubmit = () => {
-    if (selectedRating !== null) {
-      router.push(`/interactive-rating/thanks?rating=${selectedRating}`, { scroll: false });
-    }
+    router.push("/interactive-rating/thanks");
   };
   return (
     <main className="flex text-[15px] text-white bg-dark-blue h-screen w-screen justify-center items-center">
@@ -34,8 +36,12 @@ function Page() {
           feedback is appreciated to help us <br /> improve our offering!
         </p>
         <section className="flex space-x-7 ">
-          {rate.map((rating) => (
-            <Rating key={rating} rating={rating} onClick={handleRatingClick} />
+          {rate.map((ratingValue) => (
+            <Rating
+              key={ratingValue}
+              rating={ratingValue}
+              onClick={handleRatingClick}
+            />
           ))}
         </section>
 

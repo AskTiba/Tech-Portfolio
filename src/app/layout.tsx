@@ -1,6 +1,9 @@
+// layout.tsx
 import type { Metadata } from "next";
-import "./globals.css";
 import { Overpass } from "next/font/google";
+import "./globals.css";
+import React from "react";
+import ClientProvider from "./ClientProvider"; // Adjust this import to your actual path
 
 const overpass = Overpass({
   weight: ["500", "700"],
@@ -16,12 +19,14 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
-      <body className={overpass.className}>{children}</body>
+      <body className={overpass.className}>
+        <ClientProvider>{children}</ClientProvider>
+      </body>
     </html>
   );
 }

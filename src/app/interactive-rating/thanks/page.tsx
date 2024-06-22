@@ -4,14 +4,14 @@ import { useSearchParams } from "next/navigation";
 import React from "react";
 import Image from "next/image";
 import thanks from "@public/images/illustration-thank-you.svg";
+import { useAppSelector } from "@/app/hooks";
 
 function Page() {
-  const searchParams = useSearchParams();
-  const rating = searchParams.get("rating");
+  const rating = useAppSelector((state) => state.rating.value);
 
   return (
     <main className="flex justify-center items-center bg-dark-blue h-screen w-screen text-white">
-      <article className="bg-blue flex flex-col items-center py-10 px-8 rounded-3xl">
+      <article className="bg-blue flex flex-col items-center py-6 px-3 rounded-3xl">
         <div>
           <Image
             src={thanks}
