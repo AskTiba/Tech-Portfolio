@@ -10,7 +10,7 @@ export default function Home() {
   };
   return (
     <main className="flex flex-col text-5xl text-white bg-dark-blue h-screen w-screen justify-center items-center">
-      <div className="uppercase flex text-center phone:text-red-600 justify-center items-center text-5xl font-bold tracking-wider">
+      <div className="uppercase flex text-center max-[384px]:text-red-600 justify-center items-center text-5xl font-bold tracking-wider">
         welcome to my project hub
       </div>
       <Button

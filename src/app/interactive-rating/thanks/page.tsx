@@ -11,7 +11,7 @@ function Page() {
 
   return (
     <main className="flex justify-center items-center bg-dark-blue h-screen w-screen text-white">
-      <article className="bg-blue flex flex-col items-center py-6 px-3 rounded-3xl">
+      <article className="bg-blue flex flex-col items-center py-6 px-7 rounded-3xl">
         <div>
           <Image
             src={thanks}
@@ -24,8 +24,11 @@ function Page() {
         </div>
         <div className="text-xl font-bold my-5">Thank You!</div>
         <p className="text-center text-gray text-[14px]">
-          We appreciate you taking the time to give a rating. <br /> If you ever
-          need more support, don’t hesitate to <br /> get in touch!
+          We appreciate you taking the time to give a{" "}
+          <br className="xl:hidden max-[384px]:inline-block" /> rating.{" "}
+          <br className="max-[384px]:hidden" /> If you ever need more support,
+          don’t <br className="xl:hidden max-[384px]:inline-block" /> hesitate
+          to <br className="max-[384px]:hidden" /> get in touch!
         </p>
       </article>
     </main>
