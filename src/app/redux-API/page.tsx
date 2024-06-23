@@ -6,11 +6,11 @@ import Image from "next/image";
 
 function APIpage() {
   const [numDogs, setNumDogs] = useState(5);
-  const { data = [], isFetching } = useFetchBreedsQuery();
+  const { data = [], isFetching } = useFetchBreedsQuery(numDogs);
 
   return (
     <main className="py-10 flex flex-col items-center justify-center">
-      <div className="">
+      <div className="flex space-x-1">
         <p className="">Dogs to fetch:</p>
         <select
           value={numDogs}
@@ -19,17 +19,17 @@ function APIpage() {
           id=""
           className=""
         >
-          <option value={5} className="">
-            {5}
+          <option value={"5"} className="">
+            5
           </option>
-          <option value={10} className="">
-            {10}
+          <option value={"10"} className="">
+            10
           </option>
-          <option value={15} className="">
-            {15}
+          <option value={"15"} className="">
+            15
           </option>
-          <option value={20} className="">
-            {20}
+          <option value={"20"} className="">
+            20
           </option>
         </select>
       </div>
