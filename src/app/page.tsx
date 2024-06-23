@@ -20,6 +20,15 @@ export default function Home() {
       >
         Interactive Rating Component
       </Button>
+      <Button
+        type="button"
+        onClick={() => {
+          router.push("/redux-API");
+        }}
+        className="bg-orange text-blue font-bold my-6 py-3 px-5 rounded-3xl text-xl transition-all duration-200 hover:bg-white"
+      >
+        Who let the dogs out
+      </Button>
     </main>
   );
 }
